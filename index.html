@@ -691,28 +691,28 @@
     </section>
 
     <section id="projects">
-        <h2>These are some of my projects</h2>
+        <h2>These are some my projects</h2>
         <div class="projects-grid">
 
             <div class="project-tile">
-                <a href="https://codepen.io/hellotechmanish/pen/ZEVoaxb" target="_blank">
-                    <img src="https://cdn.pixabay.com/photo/2018/01/21/14/36/indian-flag-3096740_1280.png"
+                <a href="https://github.com/hellotechmanish/Admin_pannel_ecom" target="_blank">
+                    <img src="https://www.bootstrapdash.com/wp-content/uploads/2020/12/CORONA-FREE-OUTER.jpg"
                         alt="Indian Flag">
-                    <p>URL using HTML & CSS</p>
+                    <p>Admin_pannel_ecom </p>
                 </a>
             </div>
 
             <div class="project-tile">
-                <a href="https://codepen.io/soumyadeepta_das/full/ZEbqNeG" target="_blank">
-                    <img src="https://i.ibb.co/8B7RyqL/Screenshot-346.png" alt="Pomodoro Clock">
-                    <p>Pomodoro Clock</p>
+                <a href="https://github.com/hellotechmanish/QR-Code_Genrator" target="_blank">
+                    <img src="./image/QR-Code_Genrator.jpg" alt="Pomodoro Clock">
+                    <p>QR-Code_Genrator</p>
                 </a>
             </div>
 
             <div class="project-tile">
-                <a href="https://codepen.io/soumyadeepta_das/full/rNOJZjY" target="_blank">
-                    <img src="https://i.ibb.co/zrJ8kVc/Screenshot-337.png" alt="Random Movie Quote Machine">
-                    <p>Random Movie Quote Machine</p>
+                <a href="https://github.com/hellotechmanish/nodeMailer" target="_blank">
+                    <img src="./image/NodeMailer.png" alt="Random Movie Quote Machine">
+                    <p>NodeMailer</p>
                 </a>
             </div>
 
@@ -723,15 +723,10 @@
                 </a>
             </div>
 
-            <div class="project-tile">
-                <a href="https://codepen.io/soumyadeepta_das/full/qBOddOM" target="_blank">
-                    <img src="https://i.ibb.co/DzfdCfr/Screenshot-339.png" alt="Technical Documentation Page">
-                    <p>Technical Documentation Page: Introduction to HTML</p>
-                </a>
-            </div>
+
         </div>
 
-        <a href="https://codepen.io/soumyadeepta_das/" class="btn-show-all" target="_blank">
+        <a href="./project.html" class="btn-show-all" target="_blank">
             Show all <i class="fas fa-chevron-right"></i>
         </a>
     </section>
@@ -927,6 +922,40 @@
         </div>
     </section>
 
+    <!-- Include EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Initialize EmailJS with your user ID
+            emailjs.init('SMWShqjFEDCtxGXsK'); // Replace with your EmailJS user ID
+
+            // Collect form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Define the email parameters
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                message: message,
+            };
+
+            // Send email using EmailJS
+            emailjs.send('service_5mpbifh', 'template_fs5zxh7', templateParams)
+                .then(function (response) {
+                    alert('Message sent successfully!');
+                    console.log('SUCCESS!', response.status, response.text);
+                }, function (error) {
+                    alert('Failed to send message. Please try again later.');
+                    console.error('FAILED...', error);
+                });
+        });
+
+    </script>
 
 
     <footer>
