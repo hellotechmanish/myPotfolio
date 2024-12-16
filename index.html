@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Potfolio</title>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "SMWShqjFEDCtxGXsK",
+            });
+        })();
+    </script>
+
+
+
     <style>
         * {
             margin: 0;
@@ -674,7 +688,7 @@
             <p>I am a Full Stack Web Developer</p>
             <!-- <button style="padding: 20px; margin: 10px; border: none; background-color: rgb(30, 29, 29); color: #FBFBFB;"
         onclick="window.location.href = 'path/to/your/resume.pdf';">Download Resume..</button> -->
-            <a href="https://drive.google.com/file/d/1puyEvewzsyNleGMxgVu_P-BRGnORgUGX/view?usp=drive_link" download
+            <a href="https://drive.google.com/file/d/1oPmr6e1N_Ol8zj7O2Q2Fq8LAGisyphHy/view?usp=drive_link" download
                 target="_blank">
                 <button
                     style="padding: 20px; margin: 10px; border: none; background-color: rgb(30, 29, 29); color: #FBFBFB;">Download
@@ -923,37 +937,37 @@
     </section>
 
     <!-- Include EmailJS SDK -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
 
     <script>
-        document.getElementById('contact-form').addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent default form submission
+        // document.getElementById('contact-form').addEventListener('submit', function (e) {
+        //     e.preventDefault(); // Prevent default form submission
 
-            // Initialize EmailJS with your user ID
-            emailjs.init('SMWShqjFEDCtxGXsK'); // Replace with your EmailJS user ID
+        //     // Initialize EmailJS with your user ID
+        //     emailjs.init('SMWShqjFEDCtxGXsK'); // Replace with your EmailJS user ID
 
-            // Collect form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+        //     // Collect form data
+        //     const name = document.getElementById('name').value;
+        //     const email = document.getElementById('email').value;
+        //     const message = document.getElementById('message').value;
 
-            // Define the email parameters
-            const templateParams = {
-                from_name: name,
-                from_email: email,
-                message: message,
-            };
+        //     // Define the email parameters
+        //     const templateParams = {
+        //         from_name: name,
+        //         from_email: email,
+        //         message: message,
+        //     };
 
-            // Send email using EmailJS
-            emailjs.send('service_5mpbifh', 'template_fs5zxh7', templateParams)
-                .then(function (response) {
-                    alert('Message sent successfully!');
-                    console.log('SUCCESS!', response.status, response.text);
-                }, function (error) {
-                    alert('Failed to send message. Please try again later.');
-                    console.error('FAILED...', error);
-                });
-        });
+        //     // Send email using EmailJS
+        //     emailjs.send('service_5mpbifh', 'template_fs5zxh7', templateParams)
+        //         .then(function (response) {
+        //             alert('Message sent successfully!');
+        //             console.log('SUCCESS!', response.status, response.text);
+        //         }, function (error) {
+        //             alert('Failed to send message. Please try again later.');
+        //             console.error('FAILED...', error);
+        //         });
+        // });
 
     </script>
 
